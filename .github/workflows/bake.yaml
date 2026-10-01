@@ -9,9 +9,11 @@ on:
   push:
     paths:
       - materials.txt
+      - bake.py
+      - .github/workflows/bake.yaml
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: bake-pancakes
@@ -28,10 +30,25 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 bake.py
-      - name: Commit pancakes.json
+      - name: Prepare pages
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add pancakes.json
-          git diff --cached --quiet || git commit -m "Update pancakes.json"
-          git push
+          mkdir _pages
+          cp pancakes.json _pages/
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _pages
+
+  deploy:
+    needs: update
+    name: Deploy pages
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
