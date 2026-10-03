@@ -8,6 +8,7 @@ katabameが作成したDalamudプラグインのインストール用リポジ�
 ## 利用可能なプラグイン
 * [HuntTally](https://github.com/katabame/HuntTally)
 * [NickHider](https://github.com/katabame/NickHider)
+* [AutoFateSync](https://github.com/katabame/AutoFateSync)
 
 #### 名前の由来
 * [ダラガブポポト](https://jp.finalfantasyxiv.com/lodestone/playguide/db/item/5ba2f7be961/)

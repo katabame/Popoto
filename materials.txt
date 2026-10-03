@@ -1,2 +1,3 @@
 HuntTally
 NickHider
+AutoFateSync
