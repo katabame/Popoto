@@ -7,8 +7,13 @@ katabameが作成したDalamudプラグインのインストール用リポジ�
 
 ## 利用可能なプラグイン
 * [HuntTally](https://github.com/katabame/HuntTally)
+  * モブ討伐数記録プラグイン
 * [NickHider](https://github.com/katabame/NickHider)
+  * 自キャラ名匿名化プラグイン
 * [AutoFateSync](https://github.com/katabame/AutoFateSync)
+  * FATEレベルシンク自動化プラグイン
+* [FateTracker](https://github.com/katabame/FateTracker)
+  * FATE追跡プラグイン
 
 #### 名前の由来
 * [ダラガブポポト](https://jp.finalfantasyxiv.com/lodestone/playguide/db/item/5ba2f7be961/)
